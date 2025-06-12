@@ -1,7 +1,11 @@
 import Link from "next/link";
 import {ReactNode} from "react";
 
-export default function AdminHome({children}: Readonly<{ children: ReactNode }>) {
+type AdminHomeProps = {
+    children: ReactNode
+}
+
+export default function AdminHome({children}: AdminHomeProps) {
     return (
         <div className="grid grid-cols-2">
             <aside className="">

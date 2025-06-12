@@ -1,6 +1,10 @@
 import {ReactNode} from "react";
 
-export default function AdminPage(props: Readonly<{ children: ReactNode }>) {
+type AdminPageProps = {
+    children: ReactNode
+}
+
+export default function AdminPage(props: AdminPageProps) {
     return (
         <div {...props}/>
     )
