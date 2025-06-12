@@ -1,26 +1,12 @@
-import Link from "next/link";
-import {ReactNode} from "react";
+import SideNav from '@/app/ui/dashboard/sidenav';
 
-type AdminHomeProps = {
-    children: ReactNode
-}
-
-export default function AdminHome({children}: AdminHomeProps) {
+export default function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <div className="grid grid-cols-2">
-            <aside className="">
-                <nav>
-                    <ul>
-                        <li>
-                            <Link href={"/admin/adaptation"}>Adaptation</Link>
-                        </li>
-                        <li>
-                            <Link href={"/admin/vacancies"}>Vacancies</Link>
-                        </li>
-                    </ul>
-                </nav>
-            </aside>
-            {children}
+        <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
+            <div className="w-full flex-none md:w-64">
+                <SideNav />
+            </div>
+            <div className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div>
         </div>
-    )
+    );
 }
