@@ -1,6 +1,7 @@
-import {ReactNode} from "react";
+import React from "react";
 
-export default function AdminPage(props: {children: ReactNode}) {
+// eslint-disable-next-line
+export default function AdminPage(props: any) {
     return (
         <div {...props}/>
     )
