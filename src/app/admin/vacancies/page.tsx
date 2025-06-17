@@ -4,7 +4,7 @@ import React, {useEffect} from "react";
 
 const getVacancies = async (): Promise<Response | undefined> => {
     try {
-        const response = await fetch('https://learn-9fc9.vercel.app/api/vacancies/list')
+        const response = await fetch('/api/vacancies/list')
 
         return await response.json();
     } catch (error) {
