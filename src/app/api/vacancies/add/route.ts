@@ -13,14 +13,13 @@ async function initTable() {
         active BOOLEAN NOT NULL DEFAULT TRUE,
         title TEXT NOT NULL,
         priority INTEGER NOT NULL CHECK (priority BETWEEN 1 AND 5) DEFAULT 3,
+        description TEXT,
         salary_from INTEGER,
         salary_to INTEGER,
         salary_currency VARCHAR(10),
         salary_gross BOOLEAN,
         location TEXT,
         experience TEXT,
-        schedule TEXT,
-        employment TEXT,
         published TIMESTAMP WITH TIME ZONE NOT NULL,
         url TEXT NOT NULL
       )
@@ -59,13 +58,14 @@ export async function POST(request: Request) {
         // Вставка данных в базу
         await sql`
       INSERT INTO vacancies (
-        title, active, priority, salary_from, salary_to,
+        title, active, description, priority, salary_from, salary_to,
         salary_currency, salary_gross, location,
-        experience, schedule, employment, published,
+        experience, published,
         url
       ) VALUES (
         ${body.title},
         true,
+        ${body.description || ''},
         ${body.priority || 3},
         ${body.salary_from || null},
         ${body.salary_to || null},
@@ -73,8 +73,6 @@ export async function POST(request: Request) {
         ${body.salary_gross || false},
         ${body.location || ''},
         ${body.experience || ''},
-        ${body.schedule || ''},
-        ${body.employment || ''},
         ${new Date().toISOString()},
         ${body.url || ''}
       )

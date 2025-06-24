@@ -54,8 +54,6 @@ export async function GET(request: Request) {
                 },
                 location: v.location,
                 experience: v.experience,
-                schedule: v.schedule,
-                employment: v.employment,
                 published: v.published,
                 url: v.url
             }))
