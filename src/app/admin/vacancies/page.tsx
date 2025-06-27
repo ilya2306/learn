@@ -24,9 +24,16 @@ const getVacancies = async (filter: {
 
         const response = await fetch(`/api/vacancies/list?${search.toString()}`);
 
-        return await response.json();
+        const data = await response.json();
+
+        if (response.status === 200) return data
+        else {
+            return undefined
+        }
     } catch (error) {
         console.error(error);
+
+        throw error
     }
 }
 

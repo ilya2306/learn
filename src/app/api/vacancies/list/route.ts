@@ -36,6 +36,8 @@ export async function GET(request: Request) {
         // Извлечение общего количества записей
         const totalCount = vacancies[0]?.total_count || 0;
 
+        console.log("vacancies", vacancies);
+
         // Форматирование результата
         const result = {
             page,
