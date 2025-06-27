@@ -25,7 +25,8 @@ export const data = [{
         phone: "+7 (921) 123-45-67",
         about: "Специализация: React и Vue.js. Участвую в разработке клиентской части CRM-системы.",
         photo: "https://mediaslide-europe.storage.googleapis.com/metromodels/pictures/1358/5723/large-1589358166-337fcace53fb67953815b015a2a138c4.jpg",
-        organization: "ООО ТехноСофт"
+        organization: "ООО ТехноСофт",
+        email: "anna@moneta.ru"
     },
     documents: DOCUMENTS, // Предполагается существование переменной
     mentors: [
@@ -67,7 +68,8 @@ export const data = [{
             phone: "+7 (383) 222-33-44",
             about: "Автоматизация развертывания, мониторинг Kubernetes-кластеров, CI/CD",
             photo: "https://i.pinimg.com/736x/38/43/13/3843139b7020fe41af6be5acae50d0be.jpg",
-            organization: "ОАО CloudTech Solutions"
+            organization: "ОАО CloudTech Solutions",
+            email: "max@moneta.ru"
         },
         documents: DOCUMENTS,
         mentors: [
@@ -119,7 +121,8 @@ export const data = [{
             phone: "+7 (922) 555-44-33",
             about: "Изучаю SQL и Power BI, помогаю в сборе требований к ПО",
             photo: "https://image.kazanexpress.ru/ca381hq7dhhn2o5s2d40/original.jpg",
-            organization: "ПАО Банк Финанс"
+            organization: "ПАО Банк Финанс",
+            email: "olga@moneta.ru"
         },
         documents: DOCUMENTS,
         mentors: [
@@ -156,7 +159,8 @@ export const data = [{
             phone: "+7 (917) 888-77-66",
             about: "Управление командой из 20 разработчиков, планирование спринтов",
             photo: "https://avatars.mds.yandex.net/get-yapic/27232/AET5BT9wsGqH5PebAqSp7VrHfvc-1/orig",
-            organization: "ООО Цифровые Технологии"
+            organization: "ООО Цифровые Технологии",
+            email: "alex@moneta.ru"
         },
         documents: DOCUMENTS,
         mentors: [
@@ -199,7 +203,8 @@ export const data = [{
             phone: "+7 (495) 123-45-67",
             about: "Разрабатываю микросервисы на Java и Spring Boot. Интересуюсь Kubernetes.",
             photo: "https://profile-images.xing.com/images/7493713f26ab73f328bfba5b41f9fbda-2/hugo-pessoa-correia.1024x1024.jpg",
-            organization: "ООО ТехноПрогресс"
+            organization: "ООО ТехноПрогресс",
+            email: "andrew@moneta.ru"
         },
         documents: [
             'Паспорт РФ',
@@ -254,7 +259,8 @@ export const data = [{
             phone: "+7 (812) 444-55-66",
             about: "Руковожу командой из 10 разработчиков. Специализация: iOS, Swift.",
             photo: "",
-            organization: "ОАО Digital Solutions"
+            organization: "ОАО Digital Solutions",
+            email: "ekaterina@moneta.ru"
         },
         documents: [
             'Паспорт РФ',
@@ -318,7 +324,8 @@ export const data = [{
             phone: "+7 (383) 111-22-33",
             about: "Прохожу стажировку по автоматизации тестирования. Изучаю Python и Selenium.",
             photo: "https://p0.zoon.ru/2/2/679a73ceb815eb12bd01c93b_67bc2fa2364152.25360517.jpg",
-            organization: "ООО СофтТех"
+            organization: "ООО СофтТех",
+            email: "dmitry@moneta.ru"
         },
         documents: [
             'Паспорт РФ',
