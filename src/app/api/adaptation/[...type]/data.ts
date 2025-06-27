@@ -24,7 +24,7 @@ export const data = [{
         officeAddress: "г. Санкт-Петербург, Невский пр-т, д. 42, офис 501",
         phone: "+7 (921) 123-45-67",
         about: "Специализация: React и Vue.js. Участвую в разработке клиентской части CRM-системы.",
-        photo: "https://example.com/photos/anna-petrova.jpg",
+        photo: "https://mediaslide-europe.storage.googleapis.com/metromodels/pictures/1358/5723/large-1589358166-337fcace53fb67953815b015a2a138c4.jpg",
         organization: "ООО ТехноСофт"
     },
     documents: DOCUMENTS, // Предполагается существование переменной
@@ -66,7 +66,7 @@ export const data = [{
             officeAddress: "г. Новосибирск, ул. Ленина, д. 24, коворкинг 'ИТ-Парк'",
             phone: "+7 (383) 222-33-44",
             about: "Автоматизация развертывания, мониторинг Kubernetes-кластеров, CI/CD",
-            photo: "",
+            photo: "https://i.pinimg.com/736x/38/43/13/3843139b7020fe41af6be5acae50d0be.jpg",
             organization: "ОАО CloudTech Solutions"
         },
         documents: DOCUMENTS,
@@ -118,7 +118,7 @@ export const data = [{
             officeAddress: "г. Екатеринбург, ул. Мамина-Сибиряка, д. 101, этаж 5",
             phone: "+7 (922) 555-44-33",
             about: "Изучаю SQL и Power BI, помогаю в сборе требований к ПО",
-            photo: "https://hrportal.example.com/photo/4567.jpg",
+            photo: "https://image.kazanexpress.ru/ca381hq7dhhn2o5s2d40/original.jpg",
             organization: "ПАО Банк Финанс"
         },
         documents: DOCUMENTS,
@@ -155,7 +155,7 @@ export const data = [{
             officeAddress: "г. Казань, ул. Кремлёвская, д. 35, этаж 15",
             phone: "+7 (917) 888-77-66",
             about: "Управление командой из 20 разработчиков, планирование спринтов",
-            photo: "https://corpcdn.example.com/avatars/zukov_av.jpg",
+            photo: "https://avatars.mds.yandex.net/get-yapic/27232/AET5BT9wsGqH5PebAqSp7VrHfvc-1/orig",
             organization: "ООО Цифровые Технологии"
         },
         documents: DOCUMENTS,
@@ -198,7 +198,7 @@ export const data = [{
             officeAddress: "г. Москва, ул. Тверская, д. 10, этаж 7",
             phone: "+7 (495) 123-45-67",
             about: "Разрабатываю микросервисы на Java и Spring Boot. Интересуюсь Kubernetes.",
-            photo: "https://company.com/photos/asmirnov.jpg",
+            photo: "https://profile-images.xing.com/images/7493713f26ab73f328bfba5b41f9fbda-2/hugo-pessoa-correia.1024x1024.jpg",
             organization: "ООО ТехноПрогресс"
         },
         documents: [
@@ -317,7 +317,7 @@ export const data = [{
             officeAddress: "г. Новосибирск, ул. Советская, д. 5, коворкинг 'ИТ-Град'",
             phone: "+7 (383) 111-22-33",
             about: "Прохожу стажировку по автоматизации тестирования. Изучаю Python и Selenium.",
-            photo: "https://hrportal.ru/photos/dkuznetsov.jpg",
+            photo: "https://p0.zoon.ru/2/2/679a73ceb815eb12bd01c93b_67bc2fa2364152.25360517.jpg",
             organization: "ООО СофтТех"
         },
         documents: [
