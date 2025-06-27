@@ -23,8 +23,7 @@ const addVacancy = async (formData: Record<string, unknown>) => {
 
 export default function VacanciesAddPage() {
     const {push} = useRouter()
-    const handleSubmit = React.useCallback((formData: Record<string, string | number | boolean>) => (event: FormEvent<HTMLFormElement>) => {
-
+    const handleSubmit = React.useCallback((formData: Record<string, string | number | boolean>) => {
         addVacancy(formData)
             .then(() => {
                 alert("Вакансия успешно добавлена")
@@ -33,8 +32,7 @@ export default function VacanciesAddPage() {
             })
             .catch(alert)
 
-        event.preventDefault();
-    }, []);
+    }, [push]);
 
     return (
         <div className="flex flex-col">

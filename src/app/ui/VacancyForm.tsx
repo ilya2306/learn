@@ -29,6 +29,8 @@ export function VacancyForm({data, onSubmit, showDelete}: { data?: Vacancy; onSu
             data[key] = parseData(key, value);
         })
 
+        console.log("data", data);
+
         onSubmit(data)
     }, [onSubmit]);
 
