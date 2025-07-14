@@ -36,10 +36,18 @@ export async function GET(request: Request, context: any) {
             },
             location: vacancy.location,
             experience: vacancy.experience,
-            schedule: vacancy.schedule,
-            employment: vacancy.employment,
             published: vacancy.published,
-            url: vacancy.url
+            url: vacancy.url,
+            department: vacancy.department,
+            work: {
+                employment: vacancy?.work_employment ?? null,
+                schedule: vacancy?.work_schedule ?? null,
+                hours: {
+                    from: vacancy?.work_hours_from ?? null,
+                    to: vacancy?.work_hours_to ?? null
+                }
+            },
+            description: vacancy.description
         };
 
         return NextResponse.json(result, {status: 200});

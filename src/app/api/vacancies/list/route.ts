@@ -1,14 +1,13 @@
 // app/api/vacancies/route.ts
 import postgres from 'postgres';
-import { NextResponse } from 'next/server';
+import {NextResponse} from 'next/server';
 
-const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
+const sql = postgres(process.env.POSTGRES_URL!, {ssl: 'require'});
 
 export async function GET(request: Request) {
-    console.log('GET');
     try {
         // Получение параметров запроса
-        const { searchParams } = new URL(request.url);
+        const {searchParams} = new URL(request.url);
         const page = parseInt(searchParams.get('page') || '1', 10);
         const limit = parseInt(searchParams.get('limit') || '10', 10);
         const minSalary = searchParams.get('minSalary');
@@ -18,17 +17,28 @@ export async function GET(request: Request) {
         // Расчет смещения для пагинации
         const offset = (page - 1) * limit;
 
-    const query = sql`
-      SELECT *, count(*) OVER() AS total_count
-      FROM vacancies
-      WHERE 1 = 1
-          ${minSalary ? sql` AND (salary_to >= ${minSalary} OR salary_from >= ${minSalary})` : sql``}
-      ${maxSalary ? sql` AND (salary_from <= ${maxSalary} OR salary_to <= ${maxSalary})` : sql``}
-      ${priority ? sql` AND priority = ${priority}` : sql``}
-      ORDER BY priority DESC, published DESC
-      LIMIT ${limit}
-      OFFSET ${offset}
-    `;
+        const query = sql`
+            SELECT *, count(*) OVER() AS total_count
+            FROM vacancies
+            WHERE 1 = 1
+                ${minSalary ? sql` AND (salary_to >=
+                ${minSalary}
+                OR
+                salary_from
+                >=
+                ${minSalary}
+                )` : sql``} ${maxSalary ? sql` AND (salary_from <=
+            ${maxSalary}
+            OR
+            salary_to
+            <=
+            ${maxSalary}
+            )` : sql``} ${priority ? sql` AND priority =
+            ${priority}` : sql``}
+            ORDER BY priority DESC, published DESC
+                LIMIT ${limit}
+            OFFSET ${offset}
+        `;
 
         // Выполнение запроса
         const vacancies = await query;
@@ -36,7 +46,6 @@ export async function GET(request: Request) {
         // Извлечение общего количества записей
         const totalCount = vacancies[0]?.total_count || 0;
 
-        console.log("vacancies", vacancies);
 
         // Форматирование результата
         const result = {
@@ -57,18 +66,19 @@ export async function GET(request: Request) {
                 location: v.location,
                 experience: v.experience,
                 published: v.published,
-                url: v.url
+                url: v.url,
+                department: v.department,
             }))
         };
 
         console.log("result", result);
-        return NextResponse.json(result, { status: 200 });
+        return NextResponse.json(result, {status: 200});
 
     } catch (error) {
         console.error("Database error:", error);
         return NextResponse.json(
-            { error: "Internal server error" },
-            { status: 500 }
+            {error: "Internal server error"},
+            {status: 500}
         );
     }
 }

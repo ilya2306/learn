@@ -97,6 +97,38 @@ export function VacancyForm({data, onSubmit, showDelete}: { data?: Vacancy; onSu
                     <span>Оклад указан до вычета налогов</span>
                 </label>
             </FieldSet>
+            <FieldSet legend={"Прочая информация"}>
+                <div>
+                    <label>
+                        <input type="radio" name="work_employment" value="full_time" checked/>
+                        Полная занятость
+                    </label>
+                    <label>
+                        <input type="radio" name="work_employment" value="part-time"/>
+                        Частная занятость
+                    </label>
+                </div>
+                <div>
+                    <label>График работы
+                        <input type="text" name="work_schedule"/>
+                    </label>
+                </div>
+                <div>
+                    <label>Рабочее время
+                        c: <input type="text" name="hors_from"/>
+                        по: <input type="text" name="hours_to"/>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Департамент
+                        <select name="department">
+                            <option value="developer" defaultChecked>Разработка</option>
+                            <option value="backoffice">Бэк-офис</option>
+                        </select>
+                    </label>
+                </div>
+            </FieldSet>
             {showDelete ? <button type="button">Удалить</button> : null}
             {changed ? <input type="submit" value={"Сохранить"}/> : null}
         </form>

@@ -21,7 +21,12 @@ async function initTable() {
         location TEXT,
         experience TEXT,
         published TIMESTAMP WITH TIME ZONE NOT NULL,
-        url TEXT NOT NULL
+        url TEXT NOT NULL,
+        work_employment TEXT NOT NULL CHECK (work_employment IN ('full-time', 'part-time')) DEFAULT 'full-time',
+        work_schedule TEXT,
+        hors_from INTEGER,
+        hours_to INTEGER,
+        department TEXT NOT NULL CHECK (department IN ('developer', 'backoffice')) DEFAULT 'developer'
       )
     `;
         console.log("Table checked/created successfully");
@@ -37,7 +42,6 @@ export async function POST(request: Request) {
         await initTable();
 
         const body = await request.json();
-        console.log(body);
 
         // Валидация обязательных полей
         if (!body.title) {
@@ -61,7 +65,7 @@ export async function POST(request: Request) {
         title, active, description, priority, salary_from, salary_to,
         salary_currency, salary_gross, location,
         experience, published,
-        url
+        url, work_employment, work_schedule, hors_from, hours_to, department
       ) VALUES (
         ${body.title},
         true,
@@ -75,8 +79,13 @@ export async function POST(request: Request) {
         ${body.experience || ''},
         ${new Date().toISOString()},
         ${body.url || ''}
-      )
-    `;
+          ${body.work_employment || 'full-time'},
+        ${body.work_schedule || ''},
+        ${body.hors_from || null},
+        ${body.hours_to || null},
+        ${body.department || 'developer'}
+    )
+  `;
 
         return NextResponse.json(
             { message: "Vacancy added successfully" },
