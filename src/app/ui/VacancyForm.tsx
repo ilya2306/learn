@@ -100,7 +100,7 @@ export function VacancyForm({data, onSubmit, showDelete}: { data?: Vacancy; onSu
             <FieldSet legend={"Прочая информация"}>
                 <div>
                     <label>
-                        <input type="radio" name="work_employment" value="full_time" checked/>
+                        <input type="radio" name="work_employment" value="full-time" defaultChecked/>
                         Полная занятость
                     </label>
                     <label>

@@ -78,11 +78,11 @@ export async function POST(request: Request) {
         ${body.location || ''},
         ${body.experience || ''},
         ${new Date().toISOString()},
-        ${body.url || ''}
-          ${body.work_employment || 'full-time'},
+        ${body.url || ''},
+        ${body.work_employment || 'full-time'},
         ${body.work_schedule || ''},
-        ${body.hors_from || null},
-        ${body.hours_to || null},
+        ${body.hors_from ? parseInt(body.hors_from): null},
+        ${body.hours_to ? parseInt(body.hours_to): null},
         ${body.department || 'developer'}
     )
   `;
@@ -94,6 +94,7 @@ export async function POST(request: Request) {
 
     } catch (error) {
         console.error("Database error:", error);
+        console.error(error);
         return NextResponse.json(
             { error: "Internal server error" },
             { status: 500 }
